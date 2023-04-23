@@ -1,0 +1,36 @@
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
+{
+    struct ListNode * L = (struct ListNode*)malloc(sizeof(ListNode));
+    static struct ListNode * tail = NULL;
+    struct ListNode *s;
+    int h,l,t;
+
+    while(l1 || l2)
+    {
+        t = l1->val + l2->val;
+        h = 0;
+        if(t < 10)
+            s->val = t + h;
+        else
+        {
+            l = t%10;
+            s->val = l + h;
+            h = t/10;
+        }
+        l1 = l1->next;
+        l2 = l2->next;
+
+        if(L == NULL)
+        {
+            L = s;
+        }
+        else
+        {
+            tail->next = s;
+            s->next = NULL;    
+        }
+        tail = s;
+    }
+    
+    return L;
+}
